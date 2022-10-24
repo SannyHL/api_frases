@@ -20,4 +20,11 @@ public class FrasesDTO {
     public void setFrase(String frase) {
         this.frase = frase;
     }  
+    
+    public FrasesDTO(Long id, String frase) {
+        this.id = id;
+        this.frase = frase;
+    }
+    public FrasesDTO(){
+    }
 }

@@ -26,6 +26,15 @@ public class FrasesModel {
     public void setFrase(String frase) {
         this.frase = frase;
     }
+
+    public FrasesModel(Long id, String frase) {
+        this.id = id;
+        this.frase = frase;
+    }
+    public FrasesModel(){
+    }
+
+    
     
     
 }
