@@ -7,6 +7,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,7 @@ import com.sanny.frases_motivacionais.services.FrasesService;
 @RequestMapping("/frases")
 public class FrasesController {
     
+    private static final String ID = "/id";
     @Autowired
     private ModelMapper mapper;
     @Autowired
@@ -25,5 +27,10 @@ public class FrasesController {
     @GetMapping
     public ResponseEntity<List<FrasesDTO>> findAll(){
         return ResponseEntity.ok().body(service.findAll().stream().map(x -> mapper.map(x, FrasesDTO.class)).collect(Collectors.toList()));
+    }
+
+    @GetMapping(ID)
+    public ResponseEntity<FrasesDTO> findById(@PathVariable Long id){
+        return ResponseEntity.ok().body(mapper.map(service.findById(id), FrasesDTO.class));
     }
 }
