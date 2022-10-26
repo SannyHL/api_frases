@@ -1,0 +1,11 @@
+com\sanny\frases_motivacionais\interfaces\FrasesServiceInterface.class
+com\sanny\frases_motivacionais\repositories\FrasesRepository.class
+com\sanny\frases_motivacionais\models\FrasesModel.class
+com\sanny\frases_motivacionais\services\ModelMapperService.class
+com\sanny\frases_motivacionais\exceptions\ObjectNotFoundException.class
+com\sanny\frases_motivacionais\exceptions\StandardError.class
+com\sanny\frases_motivacionais\FrasesMotivacionaisApplication.class
+com\sanny\frases_motivacionais\exceptions\ResourceExceptionHandler.class
+com\sanny\frases_motivacionais\services\FrasesService.class
+com\sanny\frases_motivacionais\controllers\FrasesController.class
+com\sanny\frases_motivacionais\dtos\FrasesDTO.class
