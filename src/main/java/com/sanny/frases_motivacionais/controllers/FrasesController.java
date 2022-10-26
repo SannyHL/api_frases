@@ -31,7 +31,7 @@ import io.swagger.annotations.ApiOperation;
 @CrossOrigin
 public class FrasesController {
     
-    private static final String ID = "/id";
+    private static final String ID = "{/id}";
     @Autowired
     private ModelMapper mapper;
     @Autowired
