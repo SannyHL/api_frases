@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -44,5 +45,12 @@ public class FrasesController {
         FrasesModel frasesModel = service.create(frasesDTO);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path(ID).buildAndExpand(frasesModel.getId()).toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @PutMapping(ID)
+    public ResponseEntity<FrasesDTO> update(@PathVariable Long id, @RequestBody FrasesDTO frasesDTO) throws Exception{
+        findById(id);
+        frasesDTO.setId(id);
+        return ResponseEntity.ok().body(mapper.map(service.update(frasesDTO), FrasesDTO.class));
     }
 }
